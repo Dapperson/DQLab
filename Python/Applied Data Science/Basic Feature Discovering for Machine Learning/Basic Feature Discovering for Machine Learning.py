@@ -152,9 +152,9 @@ plt.show()
 # In[11]:
 
 
-import matplotlib.pyplot as plt
+df_all['Fare'] = pd.qcut(df_all['Fare'], 13)
 
-fig, axs = plt.subplots(figsize=(22, 9))
+fig, axs = plt.subplots(figsize=(22,9))
 sns.countplot(x='Fare', hue='Survived', data=df_all)
 
 plt.xlabel('Fare', size=15, labelpad=20)
@@ -162,9 +162,9 @@ plt.ylabel('Passenger Count', size=15, labelpad=20)
 plt.tick_params(axis='x', labelsize=10)
 plt.tick_params(axis='y', labelsize=15)
 
-plt.legend(['Not Survived', 'Survived'], loc='upper right', prop={'size': 15})
+plt.legend(['Not Survived', 'Survived'], loc='upper right', prop={'size':15})
 plt.title('Count of Survival in {} Feature'.format('Fare'), size=15, y=1.05)
-
+plt.tight_layout()
 plt.show()
 
 
